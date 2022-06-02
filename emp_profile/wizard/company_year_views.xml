@@ -1,0 +1,60 @@
+<odoo>
+    <data>
+      <record id="wizard_company_view_form" model="ir.ui.view">
+        <field name="name">wizard.company.view.form</field>
+        <field name="model">wizard.company</field>
+        <field name="arch" type="xml">
+            <form string="Company Of Year">
+                <sheet>
+                    <group>
+                        <group>
+                            <field name="ofcmp" placeholder="Total Experince" />  
+                        </group>
+                    </group>
+                    <footer>
+                      <button name="action_done" string="Total Experince" type="object" class="btn-primary" data-hotkey="q" />
+                      <button special="cancel" data-hotkey="z" string="Discard" class="btn-secondary" />
+                    </footer>  
+                </sheet>
+            </form>
+        </field>
+      </record>
+  
+      <!-- actions opening views on models -->
+  
+      <record model="ir.actions.act_window" id="wizard_company_action_window">
+        <field name="name">Year Of Company</field>
+        <field name="res_model">wizard.company</field>
+        <field name="view_mode">form</field>
+        <field name="target">new</field>
+      </record>
+  
+  
+      <!-- server action to the one above -->
+  
+      <record model="ir.actions.server" id="wizard_company_wz_action_server">
+        <field name="name">wizard_company server</field>
+        <field name="model_id" ref="model_wizard_company"/>
+        <field name="state">code</field>
+        <field name="code">
+          action = {
+            "type": "ir.actions.act_window",
+            "view_mode": "form",
+            "res_model": model._name,
+          }
+        </field>
+      </record>
+
+      <!-- This wizard show in action list. -->
+      <record id="wizard_action_manu" model="ir.actions.act_window">
+        <field name="name">Total Experince</field>
+        <field name="res_model">wizard.company</field>
+        <field name="view_mode">tree,form</field>
+        <field name="view_id" ref="emp_profile.wizard_company_view_form" />
+        <field name="target">new</field>
+        <field name="binding_model_id" ref="model_emp_profile_emp_profile" />
+        <field name="binding_view_types">tree,form</field>
+      </record>
+  
+    </data>
+  </odoo>

@@ -1,0 +1,124 @@
+<odoo>
+  <data>
+    <!-- explicit list view definition -->
+
+    <record model="ir.ui.view" id="hr_company.list">
+      <field name="name">hr_company.list</field>
+      <field name="model">hr_company.hr_company</field>
+      <field name="arch" type="xml">
+        <!-- <tree decoration-success="state == 'done'" decoration-danger="state == 'cancel'" sampla="1" multi_edit="1"> -->
+        <tree>
+          <field name="name"/>
+           <field name="emp_id"/>
+          <!-- <field name="state" 
+                decoration-success="state == 'done'"
+                decoration-info="state == 'in_process'"
+                decoration-danger="state == 'cancel'"
+                decoration-warning="state == 'draft'"/> -->
+        </tree>
+      </field>
+    </record>
+
+    <record id="hr_company_view_form" model="ir.ui.view">
+      <field name="name">hr.company.view.form</field>
+      <field name="model">hr_company.hr_company</field>
+      <field name="arch" type="xml">
+        <form string="HR Company">
+          <header>
+            <!-- Whatsapp Button click event -->
+            <button name="whatsapp_share" string="Share In Whatsapp" class="oe_highlight" data-hotkey="w" icon="fa-whatsapp" type="object" />
+            <button  name="action_confirm" string="search Confirm" type="object" class="oe_highlight" />
+            <!-- StatusBar button click event. -->
+            <button name="action_in_process" string="In Process" type="object" states="draft" />
+            <button name="action_done" string="Mark As Done" type="object" states="in_process" />
+            <button name="action_cancel" string="Cancel" type="object" states="draft,in_process" />
+            <!-- options="{'clickable':'1'}" -->
+            <field name="state" widget="statusbar" nolabel="1" statusbar_visible="draft,in_process,done" />
+          </header>
+          <sheet>
+            <!-- Smart Button Add in Odoo. -->
+            <div class="oe_button_box" name="button_box">
+              <button name="action_emp" type="object" class="oe_stat_button" icon="fa-user">
+                <div class="o_stat_info">
+                  <field name="emp_id" class="o_stat_value" widget="statinfo"/>
+                  <span class="o_stat_text">Employee</span>
+                </div>
+              </button>
+            </div>
+            <group>
+              <group>
+                <field name="name" placeholder="Company Name" /> 
+                <field name="emp_status" placeholder="Status" />
+                <field name="phone" placeholder="Employee Phone Number" /> 
+              </group>
+              <group>
+                <field name="emp_id" placeholder="employee m2o" widget="many2one_avatar" /> <!-- widget="selection" /  widget="many2one_avatar" this widget show the image -->
+                <field name="gender" help="Employee Gender Field"/> <!-- Related Field -->
+                <field name="total_selary" />
+                <field name="currency_id" placeholder="Currency" />
+                <!-- <field name="eventcompute" placeholder="Event Total" /> Add Compute Field -->
+                <!-- <field name="emp_id" placeholder="employee m2o" domain="[('status','=','True')]" /> -->
+              </group>
+            </group>
+            <group>
+              <group>
+                <button name="action_test" type="object" string="Action Test" class="oe_highlight" />
+                <button name="%(hr_company.action_window)d" type="action" string="employee action"  />
+              </group>
+            </group>
+            <notebook>
+              <page name="color" string="Color">
+                <field name="color" widget="color_picker" />
+                
+              </page>
+              
+            </notebook>
+          </sheet>
+        </form>
+      </field>
+    </record>
+
+    <!-- actions opening views on models -->
+
+    <record model="ir.actions.act_window" id="hr_company.action_window">
+      <field name="name">hr_company window</field>
+      <field name="res_model">hr_company.hr_company</field>
+      <field name="view_mode">tree,form</field>
+    </record>
+
+
+    <!-- server action to the one above -->
+
+    <record model="ir.actions.server" id="hr_company.action_server">
+      <field name="name">hr_company server</field>
+      <field name="model_id" ref="model_hr_company_hr_company"/>
+      <field name="state">code</field>
+      <field name="code">
+        action = {
+          "type": "ir.actions.act_window",
+          "view_mode": "tree,form",
+          "res_model": model._name,
+        }
+      </field>
+    </record>
+
+
+    <!-- Top menu item -->
+
+    <menuitem name="hr_company" id="hr_company.menu_root"/>
+
+    <!-- menu categories -->
+
+    <menuitem name="Menu 1" id="hr_company.menu_1" parent="hr_company.menu_root"/>
+    <menuitem name="Menu 2" id="hr_company.menu_2" parent="hr_company.menu_root"/>
+
+    <!-- actions -->
+
+    <menuitem name="List" id="hr_company.menu_1_list" parent="hr_company.menu_1"
+              action="hr_company.action_window"/>
+    
+    <menuitem name="Server to list" id="hr_company" parent="hr_company.menu_2"
+              action="hr_company.action_server"/>
+
+  </data>
+</odoo>

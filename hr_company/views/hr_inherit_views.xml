@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <data>
+        <record id="hrinherit_views" model="ir.ui.view">
+            <field name="name">hrinherit.views</field>
+            <field name="model">emp_profile.emp_profile</field>
+            <field name="inherit_id" ref="emp_profile.employee_profile_view_form" />
+            <field name="arch" type="xml">
+                <field name="bday" position="attributes">
+                    <attribute name="required">1</attribute>
+                </field>
+            </field>
+        </record>
+        
+        <!-- Inherit Menu Item And Make Changes -->
+        <record id="emp_profile.menu_employee_department" model="ir.ui.menu">
+            <field name="name">New Department</field>
+            <!-- <field name="sequence">100</field> This Line Using a top to botam show a list name -->
+        </record>
+    </data>
+    
+    <!-- Inherit Existing Actions in Odoo (change form name)-->
+    <record id="emp_profile.action_window" model="ir.actions.act_window">
+        <field name="name">Employee Profile</field>
+    </record>
+
+</odoo>
