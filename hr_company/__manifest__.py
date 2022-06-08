@@ -29,7 +29,8 @@
         'views/templates.xml',
         'views/hr_inherit_views.xml',
         'reports/report_views.xml',
-        'reports/employee_details.xml',
+        'reports/sale_inherit_report_views.xml',
+        'reports/employee_details.xml'
         
     ],
     # only loaded in demonstration mode
