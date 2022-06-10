@@ -25,6 +25,7 @@
       <field name="arch" type="xml">
         <form string="HR Company">
           <header>
+            <button name="print_report" string="Print" type="object" class="oe_highlight" />
             <!-- Whatsapp Button click event -->
             <button name="whatsapp_share" string="Share In Whatsapp" class="oe_highlight" data-hotkey="w" icon="fa-whatsapp" type="object" />
             <button  name="action_confirm" string="search Confirm" type="object" class="oe_highlight" />
