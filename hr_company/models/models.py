@@ -46,6 +46,9 @@ class hr_company(models.Model):
         ('unique_phone','unique (phone)', 'Phone Number Must Be Unique')
     ]
 
+    def print_report(self):
+        return self.env.ref('hr_company.report_employee_payslip').report_action(self)
+
     def action_test(self):
         print("Button Click!!!!!!!!!!!!!!!1")
 

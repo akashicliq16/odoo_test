@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <report id="report_employee_payslip" 
+    string="Employee Details" 
+    model="hr_company.hr_company" 
+    report_type="qweb-pdf" 
+    name="hr_company.report_companys" 
+    file="hr_company.report_companys" />
+
+    <!-- <report id="report_employee_python" 
+    string="Employee Details Python" 
+    model="hr_company.hr_company" 
+    report_type="qweb-pdf" 
+    name="hr_company.report_python" 
+    file="hr_company.report_python" /> -->
+
+</odoo>
