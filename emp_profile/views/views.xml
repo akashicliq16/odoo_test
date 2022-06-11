@@ -16,6 +16,35 @@
       </field>
     </record>
 
+    <!-- calendar views. -->
+    <record id="emp_profile_view_calendar" model="ir.ui.view">
+      <field name="name">emp.profile.view.calendar</field>
+      <field name="model">emp_profile.emp_profile</field>
+      <field name="arch" type="xml">
+        <calendar date_start="create_date">
+          <field name="sequence" widget="handle" />
+          <field name="id" />
+          <field name="name"/>
+          <field name="email" />
+          <field name="phone" />
+        </calendar>
+      </field>
+    </record>
+
+    <!-- Graph Views -->
+    <record id="model_emp_view_graph" model="ir.ui.view">
+      <field name="name">model.emp.view.graph</field>
+      <field name="model">emp_profile.emp_profile</field>
+      <field name="arch" type="xml">
+        <graph string="" type="bar">
+          <field name="id" />
+          <field name="name"/>
+          <field name="email" />
+          <field name="phone" />
+        </graph>
+      </field>
+    </record>
+
     <record id="employee_profile_view_form" model="ir.ui.view">
       <field name="name">employee.profile.view.form</field>
       <field name="model">emp_profile.emp_profile</field>
@@ -77,7 +106,7 @@
     <record model="ir.actions.act_window" id="emp_profile.action_window">
       <field name="name">emp_profile window</field>
       <field name="res_model">emp_profile.emp_profile</field>
-      <field name="view_mode">tree,form</field>
+      <field name="view_mode">tree,form,calendar,graph</field>
     </record>
 
 
