@@ -2,6 +2,11 @@ from odoo import api, models, _
 
 class EmployeeDetailReport(models.AbstractModel):
     _name = 'report.hr_company.report_companys'
+# from pyexpat import model
+from odoo import api,fields,models, _
+
+class EmployeeDetailReport(models.Model):
+    _name = 'hr_company.hr_company.report_companys'
     _description = 'Employee Details Report'
 
     @api.model
@@ -23,4 +28,5 @@ class EmployeeDetailReport(models.AbstractModel):
             'data' : data,
             'docs' : docs,
             'hrlist':hrlist,
+            
         }

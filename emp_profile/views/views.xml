@@ -26,6 +26,8 @@
           <field name="name_seq"/>
           <field name="id" />
           <field name="comp_id" />
+          <field name="sequence" widget="handle" />
+          <field name="id" />
           <field name="name"/>
           <field name="email" />
           <field name="phone" />
