@@ -9,29 +9,32 @@
 from odoo import models, fields, api, _
 from odoo.exceptions import ValidationError
 
+class Address(models.Model):
+    _name = "address"
+    _rec_name = "street"
 
+    street = fields.Char("Street")
+    street_one = fields.Char("Street2")
+    city = fields.Char("City")
+    stat = fields.Char("State")
+    country = fields.Char("Country")
+    zip_code = fields.Char("Zip Code")
 
 class hr_company(models.Model):
     _name = 'hr_company.hr_company'
     _description = 'hr_company.hr_company'
+    _inherit = "address"
     _rec_name = "name"
+    _order = "sequence"
 
+    sequence = fields.Integer("company")
     name = fields.Char(string="Name Of Company", help="This is Name Of Company", required=True)
-    emp_id = fields.Many2one("emp_profile.emp_profile", string="Employee",
-    # Domain Defination:- Odoo domain is used to select records from a model or database table. It is a very common use case when you need to display a subset 
-    # of all available records from an action, or to allow only a subset of possible records to be the target of a many2one relation.
-                            # domain = "[('currency_id','=','INR'),('status','=','True')]" 
-
-                            # Dynamic Field.
-                            # domain = "[('currency_id','=','INR')]"
-                                )
+    
     emp_status = fields.Boolean(string="Active", help="This is status fields.")
     currency_id = fields.Many2one("res.currency", string="currency_id", help="This field using currency type")
     color = fields.Integer(string="Color")
-    phone = fields.Char(string="Phone Number", help="This employee phone number fields.",size=10)
+    phone = fields.Char(string="Phone Number", help="This employee phone number fields.")
     state = fields.Selection([("draft","Draft"),("in_process","In Process"),("done","Done"),("cancel","Cancel")],default="draft",string="Status")
-    gender = fields.Selection([("male","Male"),("female","Female")], string="Gender", related='emp_id.gender') # related Field
-    total_selary = fields.Float(string="Total selary")
     
     # eventcompute = fields.Integer(string="Event", compute="compute_event") # Add Compute Field.
 
@@ -66,26 +69,8 @@ class hr_company(models.Model):
                 raise ValidationError(_("year of company Cannot Be Zero."))
 
 
-    # The onchange mechanism in Odoo enables the feature to modify or update the value of a field if any update is done on the other fields.
-    @api.onchange('emp_id')
-    def onchange_emp_id(self):
-        if self.emp_id:
-            if self.emp_id.total_selary:
-                self.total_selary = self.emp_id.total_selary
-        else:
-            self.total_selary = '0.00'
 
-    # whatsapp_share message code.
-    def whatsapp_share(self):
-        if not self.emp_id.phone:
-            raise ValidationError(_("Missing Phone Number in Patient record"))
-        message= 'Hi %s , your cv share: %s' % (self.emp_id.name, self.emp_id.gender)
-        whatsapp_api_url = 'https://api.whatsapp.com/send?phone=%s&text=%s' % (self.emp_id.phone, message)
-        return{
-            'type':'ir.actions.act_url',
-            'target' : 'new',
-            'url' : whatsapp_api_url
-        }
+    
 
     def action_in_process(self):
         for rec in self:
@@ -111,16 +96,7 @@ class hr_company(models.Model):
             print('male employee...', female_employee)
 
         
-    def action_emp(self):
-        # print("Test!!!!!!!!!!!!!!!!!!!!!!!")
-        return {
-          "type": 'ir.actions.act_window',
-          "name": 'Employee',
-          "res_model": 'emp_profile.emp_profile',
-          "domain" : [('emp_id','=',self.id)],
-          "view_mode": 'tree,form',
-          "target": 'current',
-        }
+    
 
 class ResPartner(models.Model):
     _inherit = 'res.partner'

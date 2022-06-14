@@ -20,14 +20,15 @@
     'version': '0.1',
 
     # any module necessary for this one to work correctly
-    'depends': ['base','emp_profile'],
+    'depends': ['base'],
 
     # always loaded
     'data': [
+        'data/company_demo_data.xml',
         'security/ir.model.access.csv',
         'views/views.xml',
         'views/templates.xml',
-        'views/hr_inherit_views.xml',
+        # 'views/hr_inherit_views.xml',
         'reports/report_views.xml',
         'reports/sale_inherit_report_views.xml',
         'reports/employee_details.xml'

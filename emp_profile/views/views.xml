@@ -7,8 +7,9 @@
       <field name="model">emp_profile.emp_profile</field>
       <field name="arch" type="xml">
         <tree>
-          <field name="sequence" widget="handle" />
+          <field name="name_seq"/>
           <field name="id" />
+          <field name="comp_id" />
           <field name="name"/>
           <field name="email" />
           <field name="phone" />
@@ -22,8 +23,9 @@
       <field name="model">emp_profile.emp_profile</field>
       <field name="arch" type="xml">
         <calendar date_start="create_date">
-          <field name="sequence" widget="handle" />
+          <field name="name_seq"/>
           <field name="id" />
+          <field name="comp_id" />
           <field name="name"/>
           <field name="email" />
           <field name="phone" />
@@ -38,6 +40,7 @@
       <field name="arch" type="xml">
         <graph string="" type="bar">
           <field name="id" />
+          <field name="comp_id" />
           <field name="name"/>
           <field name="email" />
           <field name="phone" />
@@ -51,12 +54,28 @@
       <field name="arch" type="xml">
           <form>
             <header>
-              <button  name="action_confirm" string="search Confirm" type="object" class="oe_highlight" />
+              <!-- Whatsapp Button click event -->
+              <button name="whatsapp_share" string="Share In Whatsapp" class="oe_highlight" data-hotkey="w" icon="fa-whatsapp" type="object" />
+              <button  name="action_confirm" string="Duplicate Data" type="object" class="oe_highlight" />
               <!-- it is a to type of button object, action that button show wizard.-->
               <button name="action_wizard" string="Total Experince" type="object" />
-              <button id="button_total_experince" name="%(wizard_company_action_window)d" string="Total Experince" type="action" class="btn-primary" />
+              <!-- <button id="button_total_experince" name="%(wizard_company_action_window)d" string="Total Experince" type="action" class="btn-primary" /> -->
             </header>
             <sheet>
+              <div class="oe_title">
+                <h1>
+                  <field name="name_seq" readonly="1" />
+                </h1>
+              </div>
+              <!-- Smart Button Add in Odoo. -->
+              <div class="oe_button_box" name="button_box">
+                <button name="action_emp" type="object" class="oe_stat_button" icon="fa-user">
+                  <div class="o_stat_info">
+                    <field name="comp_id" class="o_stat_value" widget="statinfo"/>
+                    <span class="o_stat_text">Company</span>
+                  </div>
+                </button>
+              </div>
                 <group>
                     <group string="Automatic Field">
                       <field name="create_uid" />
@@ -66,6 +85,7 @@
                     </group>
                       <group string="Employee Details">
                         <field name="name" placeholder="Employee Name" />
+                        <field name="comp_id" placeholder="Company m2o" widget="many2one_avatar" /> <!-- widget="selection" /  widget="many2one_avatar" this widget show the image -->
                         <field name="departments"  placeholder="Departments" /> <!-- widget="many2many_checkboxes" -->
                         <field name="email" placeholder = "Employee Email Id" />
                         <field name="phone" placeholder="Employee Phone Number" />
@@ -168,6 +188,7 @@
       <field name="model">department.types</field>
       <field name="arch" type="xml">
         <tree editable='bottom'>
+          <field name="sequence" widget="handle"/>
           <field name="id" />
           <field name="name" required='1' />
         </tree>

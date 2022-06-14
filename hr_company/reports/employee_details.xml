@@ -15,7 +15,7 @@
 		<t t-call="web.html_container">
 			<t t-call="web.internal_layout">
 				<t t-foreach="docs" t-as="doc">
-                    <h3>Previous Company</h3>
+                    <h3>Company</h3>
                     <div class="page">
                         <div class="oe_structure"/>
                         <div class="row">
@@ -24,20 +24,31 @@
                             <br></br>
                             <div style="margin-right:700px;">
                                 <table class="table table-condensend" style="border: 3px solid black !important;">
+                                    <t t-foreach="hrlist" t-as="doc">
+                                          
+                                    </t>
                                     <tr>
                                         <th>Name Of Company:</th><td style="text-align:center;"><t t-esc="doc.name" /></td>
                                     </tr>
+                                    
                                     <tr>
-                                        <th>Gender:</th><td><t t-esc="doc.gender" /></td>
+                                        <th>status:</th><td><t t-esc="doc.emp_status" /></td>
                                     </tr>
                                     <tr>
-                                        <th>Currency:</th><td><t t-esc="doc.currency_id" /></td>
+                                        <th>street:</th><td><t t-esc="doc.street" /></td>
                                     </tr>
                                     <tr>
-                                        <th>Phone:</th><td><t t-esc="doc.phone" /></td>
+                                        <th>street_one:</th><td><t t-esc="doc.street_one" /></td>
                                     </tr>
                                     
+                                    <tr>
+                                        <th>stat:</th><td><t t-esc="doc.stat" /></td>
+                                    </tr>
+                                    <tr>
+                                        <th>zip_code:</th><td><t t-esc="doc.zip_code" /></td>
+                                    </tr>
                                 </table>
+                                
                             </div>
                         </div>
                     </div>

@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+<!-- <?xml version="1.0" encoding="utf-8"?>
 <odoo>
 
     <data>
@@ -12,17 +12,17 @@
                 </field>
             </field>
         </record>
-        
+         -->
         <!-- Inherit Menu Item And Make Changes -->
-        <record id="emp_profile.menu_employee_department" model="ir.ui.menu">
-            <field name="name">New Department</field>
+        <!-- <record id="emp_profile.menu_employee_department" model="ir.ui.menu">
+            <field name="name">New Department</field> -->
             <!-- <field name="sequence">100</field> This Line Using a top to botam show a list name -->
-        </record>
-    </data>
+        <!-- </record>
+    </data> -->
     
     <!-- Inherit Existing Actions in Odoo (change form name)-->
-    <record id="emp_profile.action_window" model="ir.actions.act_window">
+    <!-- <record id="emp_profile.action_window" model="ir.actions.act_window">
         <field name="name">Employee Profile</field>
     </record>
 
-</odoo>
+</odoo> -->

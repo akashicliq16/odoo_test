@@ -1,6 +1,7 @@
 # -*- coding: utf-8 -*-
-import string
-from odoo import models, fields, api
+# import string
+from unittest import result
+from odoo import models, fields, api, _
 import datetime
 from odoo.exceptions import ValidationError
 # import re
@@ -25,6 +26,14 @@ class emp_profile(models.Model):
     
     sequence = fields.Integer("employee sequence")
     name = fields.Char(string="Full Name", help="This field is requird employee full name!", required=True, size=25, index=True)
+    comp_id = fields.Many2one("hr_company.hr_company", string="Company",
+    # Domain Defination:- Odoo domain is used to select records from a model or database table. It is a very common use case when you need to display a subset 
+    # of all available records from an action, or to allow only a subset of possible records to be the target of a many2one relation.
+                            # domain = "[('currency_id','=','INR'),('status','=','True')]" 
+
+                            # Dynamic Field.
+                            # domain = "[('currency_id','=','INR')]"
+                                )
     email = fields.Char(string="email", help="This employee email id fields.",size=80)
     phone = fields.Char(string="Phone Number", help="This employee phone number fields.")
     cv = fields.Binary(string="CV Upload", help="This is a CV Upload Fields")
@@ -35,12 +44,21 @@ class emp_profile(models.Model):
     employeestatus = fields.Boolean(string="Active", help="This is status fields.")
     departments = fields.Many2one('department.types', string="Department",help="This fields is a Department types")
     gender = fields.Selection([("male","Male"),("female","Female")])
+    name_seq = fields.Char(string='Order Reference', required=True, copy=False, readonly=True, index=True, default=lambda self: _('New'))
+
+
+    @api.model
+    def create(self,vals):
+        if vals.get('name_seq', _('New')) == _('New'):
+            vals['name_seq'] = self.env['ir.sequence'].next_by_code('emp_profile.emp_profile') or _('New')
+        result = super(emp_profile, self).create(vals)
+        return result
     
         
     
     _sql_constraints = [
-        ('unique_name','unique (name)','name must be unique.'),
-        ('unique_name','unique (age >=18)','Minimum 18 year age required. '),
+        # ('unique_name','unique (name)','name must be unique.'),
+        # ('unique_name','unique (age >=18)','Minimum 18 year age required. '),
         ('unique_phone','unique (phone)', 'Phone Number Must Be Unique')
     ]
 
@@ -74,9 +92,8 @@ class emp_profile(models.Model):
 
             # Odoo create ORM.
         vals ={
-            'name': 'Akash Suthar',
-            'email' :'exampul@gmail.com'
-            
+            'name': 'Odoo Employee',
+            'email' :'exampul@gmail.com'    
         } 
         self.env['emp_profile.emp_profile'].create(vals)
 
@@ -104,6 +121,28 @@ class emp_profile(models.Model):
             "target": 'new',
         }
         
+    def action_emp(self):
+        # print("Test!!!!!!!!!!!!!!!!!!!!!!!")
+        return {
+          "type": 'ir.actions.act_window',
+          "name": 'Company',
+          "res_model": 'hr_company.hr_company',
+          "domain" : [('comp_id','=',self.id)],
+          "view_mode": 'tree,form',
+          "target": 'new',
+        }
+
+    # whatsapp_share message code.
+    def whatsapp_share(self):
+        if not self.comp_id.phone:
+            raise ValidationError(_("Missing Phone Number in Patient record"))
+        message= 'Hi %s , your cv share: %s' % (self.comp_id.currency_id,self.comp_id.state)
+        whatsapp_api_url = 'https://api.whatsapp.com/send?phone=%s&text=%s' % (self.comp_id.phone, message)
+        return{
+            'type':'ir.actions.act_url',
+            'target' : 'new',
+            'url' : whatsapp_api_url
+        }
     
     @api.depends("bday") # depends using on time change output
     def _get_age_employee(self):       # compute show output change save button to show output.
@@ -119,5 +158,7 @@ class emp_profile(models.Model):
 
 class Department(models.Model):
     _name="department.types"
+    _order= "sequence"
 
+    sequence = fields.Integer('sequence')
     name=fields.Char("Department")

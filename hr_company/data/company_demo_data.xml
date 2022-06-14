@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="employee_profile_demo" model="hr_company.hr_company">
+        <field name="name">nextion</field>
+        <field name="phone">+911234567892</field>
+        <field name="state">in_process</field>
+        <field name="street">440, maruti opp</field>
+        <field name="street_one">Naroda road</field>
+        <field name="city">Ahmedabad</field>
+        <field name="stat">Gujarat</field>
+        <field name="country">India</field>
+        <field name="zip_code">380022</field>
+    </record>
+    <!-- <record id="employee_profile_demo_1" model="hr_company.hr_company">
+        <field name="name">nextion 1</field>
+        <field name="phone">+911234567892</field>
+        <field name="state">in_process</field>
+        <field name="street">440, maruti op</field>
+        <field name="street_one">Naroda road</field>
+        <field name="city">Ahmedabad</field>
+        <field name="stat">Gujarat</field>
+        <field name="country">India</field>
+        <field name="zip_code">380022</field>
+    </record>
+    <record id="employee_profile_demo_2" model="hr_company.hr_company">
+        <field name="name">nextion 2</field>
+        <field name="phone">+911234567892</field>
+        <field name="state">in_process</field>
+        <field name="street">440, maruti opp</field>
+        <field name="street_one">Naroda road</field>
+        <field name="city">Ahmedabad</field>
+        <field name="stat">Gujarat</field>
+        <field name="country">India</field>
+        <field name="zip_code">380022</field>
+    </record>
+    <record id="employee_profile_demo_3" model="hr_company.hr_company">
+        <field name="name">nextion 3</field>
+        <field name="phone">+911234567892</field>
+        <field name="state">in_process</field>
+        <field name="street">440, maruti opp</field>
+        <field name="street_one">Naroda road</field>
+        <field name="city">Ahmedabad</field>
+        <field name="stat">Gujarat</field>
+        <field name="country">India</field>
+        <field name="zip_code">380022</field>
+    </record>
+    <record id="employee_profile_demo_4" model="hr_company.hr_company">
+        <field name="name">nextion 4</field>
+        <field name="phone">+911234567892</field>
+        <field name="state">in_process</field>
+        <field name="street">440, maruti opp</field>
+        <field name="street_one">Naroda road</field>
+        <field name="city">Ahmedabad</field>
+        <field name="stat">Gujarat</field>
+        <field name="country">India</field>
+        <field name="zip_code">380022</field>
+    </record>
+    <record id="employee_profile_demo_5" model="hr_company.hr_company">
+        <field name="name">nextion 5</field>
+        <field name="phone">+911234567892</field>
+        <field name="state">in_process</field>
+        <field name="street">440, maruti opp</field>
+        <field name="street_one">Naroda road</field>
+        <field name="city">Ahmedabad</field>
+        <field name="stat">Gujarat</field>
+        <field name="country">India</field>
+        <field name="zip_code">380022</field>
+    </record>
+    <record id="employee_profile_demo_6" model="hr_company.hr_company">
+        <field name="name">nextion 6</field>
+        <field name="phone">+911234567892</field>
+        <field name="state">in_process</field>
+        <field name="street">440, maruti opp</field>
+        <field name="street_one">Naroda road</field>
+        <field name="city">Ahmedabad</field>
+        <field name="stat">Gujarat</field>
+        <field name="country">India</field>
+        <field name="zip_code">380022</field>
+    </record>
+    <record id="employee_profile_demo_7" model="hr_company.hr_company">
+        <field name="name">nextion 7</field>
+        <field name="phone">+911234567892</field>
+        <field name="state">in_process</field>
+        <field name="street">440, maruti opp</field>
+        <field name="street_one">Naroda road</field>
+        <field name="city">Ahmedabad</field>
+        <field name="stat">Gujarat</field>
+        <field name="country">India</field>
+        <field name="zip_code">380022</field>
+    </record>
+    <record id="employee_profile_demo_8" model="hr_company.hr_company">
+        <field name="name">nextion 8</field>
+        <field name="phone">+911234567892</field>
+        <field name="state">in_process</field>
+        <field name="street">440, maruti opp</field>
+        <field name="street_one">Naroda road</field>
+        <field name="city">Ahmedabad</field>
+        <field name="stat">Gujarat</field>
+        <field name="country">India</field>
+        <field name="zip_code">380022</field>
+    </record>
+    <record id="employee_profile_demo_9" model="hr_company.hr_company">
+        <field name="name">nextion 9</field>
+        <field name="phone">+911234567892</field>
+        <field name="state">in_process</field>
+        <field name="street">440, maruti opp</field>
+        <field name="street_one">Naroda road</field>
+        <field name="city">Ahmedabad</field>
+        <field name="stat">Gujarat</field>
+        <field name="country">India</field>
+        <field name="zip_code">380022</field>
+    </record> -->
+
+
+</odoo>
