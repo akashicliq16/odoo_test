@@ -1,18 +1,24 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
 
-    <report id="report_employee_payslip" 
+    <!-- V.12 & 13 -->
+    <!-- <report id="report_employee_payslip" 
     string="Employee Details" 
     model="hr_company.hr_company" 
     report_type="qweb-pdf" 
     name="hr_company.report_companys" 
-    file="hr_company.report_companys" />
+    file="hr_company.report_companys" /> -->
 
-    <!-- <report id="report_employee_python" 
-    string="Employee Details Python" 
-    model="hr_company.hr_company" 
-    report_type="qweb-pdf" 
-    name="hr_company.report_python" 
-    file="hr_company.report_python" /> -->
+    <!-- OR V.14 & 15-->
+    <record id="report_employee_payslip" model="ir.actions.report">
+        <field name="name">Employee Details</field>
+        <field name="model">hr_company.hr_company</field>
+        <field name="report_type">qweb-pdf</field>
+        <field name="report_name">hr_company.report_companys</field>
+        <field name="report_file">hr_company.report_companys</field>
+        <field name="binding_model_id" ref="hr_company.model_hr_company_hr_company"/>
+        <field name="binding_type">report</field>
+
+    </record>
 
 </odoo>
