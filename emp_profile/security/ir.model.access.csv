@@ -1,4 +1,3 @@
 id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
 access_emp_profile_emp_profile,emp_profile.emp_profile,model_emp_profile_emp_profile,base.group_user,1,1,1,1
-access_department_types,department_types,model_department_types,base.group_user,1,1,1,1
 access_wizard_company,wizard_company,model_wizard_company,base.group_user,1,1,1,1

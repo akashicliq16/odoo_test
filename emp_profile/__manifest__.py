@@ -25,7 +25,6 @@
     # always loaded
     'data': [
         'data/employee_demo_data.xml',
-        'data/department_type_demo_data.xml',
         'security/ir.model.access.csv',
         'views/views.xml',
         'views/templates.xml',

@@ -6,140 +6,140 @@
         <field name="email">abcdf@gmail.com</field>
         <field name="phone">+911234567892</field>
         <field name="comp_id" ref="hr_company.employee_profile_demo" />
-        <field name="departments" ref="emp_profile.department_type_demo_7" />
+        <field name="departments" ref="hr_company.department_type_demo_7" />
     </record>
     <record id="employee_profile_demo_1" model="emp_profile.emp_profile">
         <field name="name">fdcba 1</field>
         <field name="email">abcdf@gmail.com</field>
         <field name="phone">+911234567893</field>
         <field name="comp_id" ref="hr_company.employee_profile_demo" />
-        <field name="departments" ref="emp_profile.department_type_demo_1" />
+        <field name="departments" ref="hr_company.department_type_demo_1" />
     </record>
     <record id="employee_profile_demo_2" model="emp_profile.emp_profile">
         <field name="name">fdcba 2</field>
         <field name="email">abcdf@gmail.com</field>
         <field name="phone">+911234567894</field>
         <field name="comp_id" ref="hr_company.employee_profile_demo" />
-        <field name="departments" ref="emp_profile.department_type_demo_1" />
+        <field name="departments" ref="hr_company.department_type_demo_1" />
     </record>
     <record id="employee_profile_demo_3" model="emp_profile.emp_profile">
         <field name="name">fdcba 3</field>
         <field name="email">abcdf@gmail.com</field>
         <field name="phone">+911234567895</field>
         <field name="comp_id" ref="hr_company.employee_profile_demo" />
-        <field name="departments" ref="emp_profile.department_type_demo_6" />
+        <field name="departments" ref="hr_company.department_type_demo_6" />
     </record>
     <record id="employee_profile_demo_4" model="emp_profile.emp_profile">
         <field name="name">fdcba 4</field>
         <field name="email">abcdf@gmail.com</field>
         <field name="phone">+911234567896</field>
         <field name="comp_id" ref="hr_company.employee_profile_demo" />
-        <field name="departments" ref="emp_profile.department_type_demo_5" />
+        <field name="departments" ref="hr_company.department_type_demo_5" />
     </record>
     <record id="employee_profile_demo_5" model="emp_profile.emp_profile">
         <field name="name">fdcba 5</field>
         <field name="email">abcdf@gmail.com</field>
         <field name="phone">+911234567897</field>
         <field name="comp_id" ref="hr_company.employee_profile_demo" />
-        <field name="departments" ref="emp_profile.department_type_demo_4" />
+        <field name="departments" ref="hr_company.department_type_demo_4" />
     </record>
     <record id="employee_profile_demo_6" model="emp_profile.emp_profile">
         <field name="name">fdcba 6</field>
         <field name="email">abcdf@gmail.com</field>
         <field name="phone">+911234567898</field>
         <field name="comp_id" ref="hr_company.employee_profile_demo" />
-        <field name="departments" ref="emp_profile.department_type_demo_3" />
+        <field name="departments" ref="hr_company.department_type_demo_3" />
     </record>
     <record id="employee_profile_demo_7" model="emp_profile.emp_profile">
         <field name="name">fdcba 7</field>
         <field name="email">abcdf@gmail.com</field>
         <field name="phone">+911234567899</field>
         <field name="comp_id" ref="hr_company.employee_profile_demo" />
-        <field name="departments" ref="emp_profile.department_type_demo_2" />
+        <field name="departments" ref="hr_company.department_type_demo_2" />
     </record>
     <record id="employee_profile_demo_8" model="emp_profile.emp_profile">
         <field name="name">fdcba 8</field>
         <field name="email">abcdf@gmail.com</field>
         <field name="phone">+911234567891</field>
         <field name="comp_id" ref="hr_company.employee_profile_demo" />
-        <field name="departments" ref="emp_profile.department_type_demo_1" />
+        <field name="departments" ref="hr_company.department_type_demo_1" />
     </record>
     <record id="employee_profile_demo_9" model="emp_profile.emp_profile">
         <field name="name">fdcba 9</field>
         <field name="email">abcdf@gmail.com</field>
         <field name="phone">+911234567812</field>
         <field name="comp_id" ref="hr_company.employee_profile_demo" />
-        <field name="departments" ref="emp_profile.department_type_demo_11" />
+        <field name="departments" ref="hr_company.department_type_demo_11" />
     </record>
     <record id="employee_profile_demo_10" model="emp_profile.emp_profile">
         <field name="name">fdcba 10</field>
         <field name="email">abcdf@gmail.com</field>
         <field name="phone">+911234567822</field>
         <field name="comp_id" ref="hr_company.employee_profile_demo" />
-        <field name="departments" ref="emp_profile.department_type_demo_10" />
+        <field name="departments" ref="hr_company.department_type_demo_10" />
     </record>
     <record id="employee_profile_demo_11" model="emp_profile.emp_profile">
         <field name="name">fdcba 11</field>
         <field name="email">abcdf@gmail.com</field>
         <field name="phone">+911234567832</field>
         <field name="comp_id" ref="hr_company.employee_profile_demo" />
-        <field name="departments" ref="emp_profile.department_type_demo_9" />
+        <field name="departments" ref="hr_company.department_type_demo_9" />
     </record>
     <record id="employee_profile_demo_12" model="emp_profile.emp_profile">
         <field name="name">fdcba 12</field>
         <field name="email">abcdf@gmail.com</field>
         <field name="phone">+911234567842</field>
         <field name="comp_id" ref="hr_company.employee_profile_demo" />
-        <field name="departments" ref="emp_profile.department_type_demo_8" />
+        <field name="departments" ref="hr_company.department_type_demo_8" />
     </record>
     <record id="employee_profile_demo_13" model="emp_profile.emp_profile">
         <field name="name">fdcba 13</field>
         <field name="email">abcdf@gmail.com</field>
         <field name="phone">+911234567852</field>
         <field name="comp_id" ref="hr_company.employee_profile_demo" />
-        <field name="departments" ref="emp_profile.department_type_demo_7" />
+        <field name="departments" ref="hr_company.department_type_demo_7" />
     </record>
     <record id="employee_profile_demo_14" model="emp_profile.emp_profile">
         <field name="name">fdcba 14</field>
         <field name="email">abcdf@gmail.com</field>
         <field name="phone">+911234567862</field>
         <field name="comp_id" ref="hr_company.employee_profile_demo" />
-        <field name="departments" ref="emp_profile.department_type_demo_6" />
+        <field name="departments" ref="hr_company.department_type_demo_6" />
     </record>
     <record id="employee_profile_demo_15" model="emp_profile.emp_profile">
         <field name="name">fdcba 15</field>
         <field name="email">abcdf@gmail.com</field>
         <field name="phone">+911234567872</field>
         <field name="comp_id" ref="hr_company.employee_profile_demo" />
-        <field name="departments" ref="emp_profile.department_type_demo_5" />
+        <field name="departments" ref="hr_company.department_type_demo_5" />
     </record>
     <record id="employee_profile_demo_16" model="emp_profile.emp_profile">
         <field name="name">fdcba 16</field>
         <field name="email">abcdf@gmail.com</field>
         <field name="phone">+911234567882</field>
         <field name="comp_id" ref="hr_company.employee_profile_demo" />
-        <field name="departments" ref="emp_profile.department_type_demo" />
+        <field name="departments" ref="hr_company.department_type_demo" />
     </record>
     <record id="employee_profile_demo_17" model="emp_profile.emp_profile">
         <field name="name">fdcba 17</field>
         <field name="email">abcdf@gmail.com</field>
         <field name="phone">+911234567792</field>
         <field name="comp_id" ref="hr_company.employee_profile_demo" />
-        <field name="departments" ref="emp_profile.department_type_demo_4" />
+        <field name="departments" ref="hr_company.department_type_demo_4" />
     </record>
     <record id="employee_profile_demo_18" model="emp_profile.emp_profile">
         <field name="name">fdcba 18</field>
         <field name="email">abcdf@gmail.com</field>
         <field name="phone">+911234567692</field>
         <field name="comp_id" ref="hr_company.employee_profile_demo" />
-        <field name="departments" ref="emp_profile.department_type_demo_3" />
+        <field name="departments" ref="hr_company.department_type_demo_3" />
     </record>
     <record id="employee_profile_demo_19" model="emp_profile.emp_profile">
         <field name="name">fdcba 19</field>
         <field name="email">abcdf@gmail.com</field>
         <field name="phone">+911234567392</field>
         <field name="comp_id" ref="hr_company.employee_profile_demo" />
-        <field name="departments" ref="emp_profile.department_type_demo_2" />
+        <field name="departments" ref="hr_company.department_type_demo_2" />
     </record>
 
     <!--  How to generate sequence in Odoo - Auto sequence generate using ir.sequence  -->

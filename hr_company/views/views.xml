@@ -7,7 +7,7 @@
       <field name="model">hr_company.hr_company</field>
       <field name="arch" type="xml">
         <tree>
-          <field name="sequence" widget="handle" />
+          <field name="company_seq"/>
           <field name="name"/>
           <field name="emp_status" />
         </tree>
@@ -20,16 +20,19 @@
       <field name="model">hr_company.hr_company</field>
       <field name="arch" type="xml">
         <graph string="" type="bar">
+          <field name="company_seq" />
           <field name="name"/>
 
         </graph>
       </field>
     </record>
+
     <record id="hr_name_view_calendar" model="ir.ui.view">
       <field name="name">hr.name.view.calendar</field>
       <field name="model">hr_company.hr_company</field>
       <field name="arch" type="xml">
         <calendar date_start="create_date">
+          <field name="company_seq" />
           <field name="name"/>
 
         </calendar>
@@ -56,7 +59,12 @@
             <field name="state" widget="statusbar" nolabel="1" statusbar_visible="draft,in_process,done" />
           </header>
           <sheet>
-            
+            <!-- Sequence labale-->
+            <div class="oe_title">
+              <h1>
+                <field name="company_seq" readonly="1" />
+              </h1>
+            </div>
             <group>
               <group>
                 <field name="name" placeholder="Company Name" /> 
@@ -135,5 +143,39 @@
     <menuitem name="Server to list" id="hr_company" parent="hr_company.menu_2"
               action="hr_company.action_server"/>
 
+    <!-- Department -->
+
+    <record id="department_types_form" model="ir.ui.view">
+      <field name="name">department.types.form</field>
+      <field name="model">department.types</field>
+      <field name="arch" type="xml">
+        <form>
+          <group>
+            <field name="name"  />
+          </group>
+        </form>
+      </field>
+    </record>
+
+    <record id="department_types_list" model="ir.ui.view">
+      <field name="name">department.types.list</field>
+      <field name="model">department.types</field>
+      <field name="arch" type="xml">
+        <tree editable='bottom'>
+          <field name="sequence" widget="handle"/>
+          <field name="id" />
+          <field name="name" required='1' />
+        </tree>
+      </field>
+    </record>
+
+    <record model="ir.actions.act_window" id="department_types_action_window">
+      <field name="name">employee profile Department</field>
+      <field name="res_model">department.types</field>
+      <field name="view_mode">tree,form</field>
+    </record>
+
+    <menuitem id="menu_employee_department" name="Department" parent="hr_company.menu_1" action="hr_company.department_types_action_window" />
+    
   </data>
 </odoo>

@@ -88,29 +88,14 @@
         <field name="stat">Gujarat</field>
         <field name="country">India</field>
         <field name="zip_code">380022</field>
-    </record>
-    <record id="employee_profile_demo_8" model="hr_company.hr_company">
-        <field name="name">nextion 8</field>
-        <field name="phone">+911234567892</field>
-        <field name="state">in_process</field>
-        <field name="street">440, maruti opp</field>
-        <field name="street_one">Naroda road</field>
-        <field name="city">Ahmedabad</field>
-        <field name="stat">Gujarat</field>
-        <field name="country">India</field>
-        <field name="zip_code">380022</field>
-    </record>
-    <record id="employee_profile_demo_9" model="hr_company.hr_company">
-        <field name="name">nextion 9</field>
-        <field name="phone">+911234567892</field>
-        <field name="state">in_process</field>
-        <field name="street">440, maruti opp</field>
-        <field name="street_one">Naroda road</field>
-        <field name="city">Ahmedabad</field>
-        <field name="stat">Gujarat</field>
-        <field name="country">India</field>
-        <field name="zip_code">380022</field>
     </record> -->
 
+    <!--  How to generate sequence in Odoo - Auto sequence generate using ir.sequence  -->
+    <record id="company_code_sequence_name" model="ir.sequence">
+        <field name="name">Company</field>
+        <field name="code">hr_company.hr_company</field>
+        <field name="prefix">Com0/00 </field>
+        <field name="number_increment" eval="1"/>
+    </record>
 
 </odoo>

@@ -46,7 +46,7 @@ class emp_profile(models.Model):
     gender = fields.Selection([("male","Male"),("female","Female")])
     name_seq = fields.Char(string='Order Reference', required=True, copy=False, readonly=True, index=True, default=lambda self: _('New'))
 
-
+    # Sequence helping code.
     @api.model
     def create(self,vals):
         if vals.get('name_seq', _('New')) == _('New'):
@@ -156,9 +156,3 @@ class emp_profile(models.Model):
                 em.age = "Not Provide......"
 
 
-class Department(models.Model):
-    _name="department.types"
-    _order= "sequence"
-
-    sequence = fields.Integer('sequence')
-    name=fields.Char("Department")

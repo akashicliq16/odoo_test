@@ -1,2 +1,3 @@
 id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
 access_hr_company_hr_company,hr_company.hr_company,model_hr_company_hr_company,base.group_user,1,1,1,1
+access_department_types,department_types,model_department_types,base.group_user,1,1,1,1

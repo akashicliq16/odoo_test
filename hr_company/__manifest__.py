@@ -20,11 +20,12 @@
     'version': '0.1',
 
     # any module necessary for this one to work correctly
-    'depends': ['base'],
+    'depends': ['base','emp_profile'],
 
     # always loaded
     'data': [
         'data/company_demo_data.xml',
+        'data/department_type_demo_data.xml',
         'security/ir.model.access.csv',
         'views/views.xml',
         'views/templates.xml',
