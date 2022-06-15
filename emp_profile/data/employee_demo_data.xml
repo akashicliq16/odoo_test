@@ -2,7 +2,6 @@
 <odoo>
 
     <record id="employee_profile_demo" model="emp_profile.emp_profile">
-        <field name="name_seq" ref="emp_profile.employee_code_sequence_name" />
         <field name="name">fdcba</field>
         <field name="email">abcdf@gmail.com</field>
         <field name="phone">+911234567892</field>
@@ -147,7 +146,7 @@
     <record id="employee_code_sequence_name" model="ir.sequence">
         <field name="name">Employee</field>
         <field name="code">emp_profile.emp_profile</field>
-        <field name="prefix">employee</field>
+        <field name="prefix">employee00 </field>
         <field name="number_increment" eval="1"/>
         </record>
 </odoo>
