@@ -6,6 +6,7 @@
 # import string
 # from sys import maxsize
 # from tracemalloc import DomainFilter
+from tracemalloc import DomainFilter
 from odoo import models, fields, api, _
 from odoo.exceptions import ValidationError
 
@@ -35,6 +36,8 @@ class hr_company(models.Model):
     color = fields.Integer(string="Color")
     phone = fields.Char(string="Phone Number", help="This employee phone number fields.")
     state = fields.Selection([("draft","Draft"),("in_process","In Process"),("done","Done"),("cancel","Cancel")],default="draft",string="Status")
+    company_seq = fields.Char(string='Order Reference', required=True, copy=False, readonly=True, index=True, default=lambda self: _('New'))
+    usre_ids = fields.Many2one('res.users', string="Company Manager")
     
     # eventcompute = fields.Integer(string="Event", compute="compute_event") # Add Compute Field.
 
@@ -43,6 +46,12 @@ class hr_company(models.Model):
     #     eventcompute = self.env['emp_profile.emp_profile'].search_count([('emp_id','=',self.id)])
     #     self.eventcompute = eventcompute
 
+    @api.model
+    def create(self,vals):
+        if vals.get('company_seq', _('New')) == _('New'):
+            vals['company_seq'] = self.env['ir.sequence'].next_by_code('hr_company.hr_company') or _('New')
+        result = super(hr_company, self).create(vals)
+        return result
 
     _sql_constraints = [
         ('unique_name','unique (name)','name must be unique.'),
@@ -96,12 +105,19 @@ class hr_company(models.Model):
             print('male employee...', female_employee)
 
         
-    
+class Department(models.Model):
+    _name="department.types"
+    _order= "sequence"
+
+    sequence = fields.Integer('sequence')
+    name=fields.Char("Department")
+ 
 
 class ResPartner(models.Model):
     _inherit = 'res.partner'
 
     company_type = fields.Selection(Selection_add=[('si','iCliQ Solution')])
+
 
 #     value = fields.Integer()
 #     value2 = fields.Float(compute="_value_pc", store=True)

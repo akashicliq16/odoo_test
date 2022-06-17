@@ -61,7 +61,10 @@
               <button  name="action_confirm" string="Duplicate Data" type="object" class="oe_highlight" />
               <!-- it is a to type of button object, action that button show wizard.-->
               <button name="action_wizard" string="Total Experince" type="object" />
+<!-- <<<<<<< Security_odoo -->
+<!-- ======= -->
               <!-- <button id="button_total_experince" name="%(wizard_company_action_window)d" string="Total Experince" type="action" class="btn-primary" /> -->
+<!-- >>>>>>> master -->
             </header>
             <sheet>
               
@@ -173,9 +176,12 @@
     <menuitem name="Year Of Company" id="wizard_company_menu_2_year" parent="emp_profile.menu_2"
               action="wizard_company_action_window"/>
 
+<!-- <<<<<<< Security_odoo -->
+    
+<!-- ======= -->
     <!-- Department -->
 
-    <record id="department_types_form" model="ir.ui.view">
+<!--     <record id="department_types_form" model="ir.ui.view">
       <field name="name">department.types.form</field>
       <field name="model">department.types</field>
       <field name="arch" type="xml">
@@ -205,7 +211,8 @@
       <field name="view_mode">tree,form</field>
     </record>
 
-    <menuitem id="menu_employee_department" name="Department" parent="emp_profile.menu_1" action="emp_profile.department_types_action_window" />
+    <menuitem id="menu_employee_department" name="Department" parent="emp_profile.menu_1" action="emp_profile.department_types_action_window" /> -->
+<!-- >>>>>>> master -->
 
   </data>
 </odoo>

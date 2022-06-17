@@ -1,6 +1,9 @@
 # -*- coding: utf-8 -*-
 # import string
+
 from unittest import result
+
+from paramiko import SecurityOptions
 from odoo import models, fields, api, _
 import datetime
 from odoo.exceptions import ValidationError
@@ -47,6 +50,7 @@ class emp_profile(models.Model):
     name_seq = fields.Char(string='Order Reference', required=True, copy=False, readonly=True, index=True, default=lambda self: _('New'))
 
 
+    # Sequence helping code.
     @api.model
     def create(self,vals):
         if vals.get('name_seq', _('New')) == _('New'):
@@ -156,9 +160,4 @@ class emp_profile(models.Model):
                 em.age = "Not Provide......"
 
 
-class Department(models.Model):
-    _name="department.types"
-    _order= "sequence"
 
-    sequence = fields.Integer('sequence')
-    name=fields.Char("Department")

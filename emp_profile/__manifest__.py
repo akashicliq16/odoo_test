@@ -25,8 +25,11 @@
     # always loaded
     'data': [
         'data/employee_demo_data.xml',
-        'data/department_type_demo_data.xml',
+# <<<<<<< Security_odoo
+# =======
+#         'data/department_type_demo_data.xml',
         'security/ir.model.access.csv',
+        'security/security_data_access.xml',
         'views/views.xml',
         'views/templates.xml',
         'wizard/company_year_views.xml',

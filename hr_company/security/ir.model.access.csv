@@ -1,2 +1,6 @@
 id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
-access_hr_company_hr_company,hr_company.hr_company,model_hr_company_hr_company,base.group_user,1,1,1,1
+access_hr_company_hr_company,hr_company.hr_company,model_hr_company_hr_company,base.group_user,0,0,0,0
+access_hr_company_profile_company_admin,hr_company_profile_company_admin,model_hr_company_hr_company,hr_company.profile_company_admin,1,1,1,1
+access_hr_company_profile_company_hr,hr_company_profile_company_hr,model_hr_company_hr_company,hr_company.profile_company_hr,1,1,1,0
+access_hr_company_profile_record_company_name,hr_company_profile_record_company_name,model_hr_company_hr_company,hr_company.profile_record_company_name,1,0,0,0
+access_department_types,department_types,model_department_types,base.group_user,1,1,1,1
