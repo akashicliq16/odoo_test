@@ -71,6 +71,7 @@
                 <field name="emp_status" placeholder="Status" />
                 <field name="phone" placeholder="Employee Phone Number" />
                 <field name="currency_id" placeholder="Currency" />
+                <field name="usre_ids" />
                 <!-- <field name="eventcompute" placeholder="Event Total" /> Add Compute Field --> 
               </group>
               <group string="Company Address">

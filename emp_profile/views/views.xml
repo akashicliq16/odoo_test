@@ -61,7 +61,6 @@
               <button  name="action_confirm" string="Duplicate Data" type="object" class="oe_highlight" />
               <!-- it is a to type of button object, action that button show wizard.-->
               <button name="action_wizard" string="Total Experince" type="object" />
-              <!-- <button id="button_total_experince" name="%(wizard_company_action_window)d" string="Total Experince" type="action" class="btn-primary" /> -->
             </header>
             <sheet>
               

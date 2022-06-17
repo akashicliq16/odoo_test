@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <!-- Fist Category Defaind And Second res.groups defain in category-->
+        <record id="profile_records_name" model="ir.module.category">
+            <field name="name">Employees Profile</field>
+        </record>
+
+        <record id="profile_record_employees_name" model="res.groups">
+            <field name="name">Employees</field>
+            <field name="category_id" ref="profile_records_name" />
+        </record>
+        <record id="profile_records_hr_name" model="res.groups">
+            <field name="name">Hr</field>
+            <field name="category_id" ref="profile_records_name" />
+            <field name="implied_ids" eval="[(4,ref('profile_record_employees_name'))]" />
+        </record>
+        <record id="profile_records_admin_name" model="res.groups">
+            <field name="name">Admin</field>
+            <field name="category_id" ref="profile_records_name" />
+            <field name="implied_ids" eval="[(4,ref('profile_records_hr_name'))]" />
+        </record>
+
+        
+        
+        <!-- rule using of defind how to show dipatment. -->
+        <!-- <record id="employee_access_hr_for" model="ir.rule">
+            <field name="name">Access Hr Profile</field>
+            <field name="model_id" ref="emp_profile.model_emp_profile_emp_profile" />
+            <field name="domain_force">[('usre_id','=',user.id)]</field>
+            <field name="groups" eval="[(4,ref('profile_record_hr_name'))]" />
+        </record> -->
+        <!--this code is a using tu rule prowaid of the accesse -->
+        <record id="employee_access_admin_for" model="ir.rule">
+            <field name="name">Access Admin Profile</field>
+            <field name="model_id" ref="emp_profile.model_emp_profile_emp_profile" />
+            <field name="domain_force">[]</field>
+            <field name="groups" eval="[(4,ref('profile_records_admin_name'))]" />
+        </record>
+
+        <record id="employee_access_hr_for" model="ir.rule">
+            <field name="name">Access Hr Profile</field>
+            <field name="model_id" ref="emp_profile.model_emp_profile_emp_profile" />
+            <field name="domain_force">['']</field>
+            <field name="groups" eval="[(4,ref('profile_records_hr_name'))]" />
+        </record>
+
+        <record id="employee_access_empl_for" model="ir.rule">
+            <field name="name">Access Employee Profile</field>
+            <field name="model_id" ref="emp_profile.model_emp_profile_emp_profile" />
+            <field name="domain_force">[('comp_id.usre_ids','=',user.id)]</field>
+            <field name="groups" eval="[(4,ref('profile_record_employees_name'))]" />
+        </record>
+
+    </data>
+</odoo>

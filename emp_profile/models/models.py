@@ -1,6 +1,10 @@
 # -*- coding: utf-8 -*-
 # import string
+import email
+import string
 from unittest import result
+
+from paramiko import SecurityOptions
 from odoo import models, fields, api, _
 import datetime
 from odoo.exceptions import ValidationError
@@ -45,6 +49,7 @@ class emp_profile(models.Model):
     departments = fields.Many2one('department.types', string="Department",help="This fields is a Department types")
     gender = fields.Selection([("male","Male"),("female","Female")])
     name_seq = fields.Char(string='Order Reference', required=True, copy=False, readonly=True, index=True, default=lambda self: _('New'))
+
 
     # Sequence helping code.
     @api.model

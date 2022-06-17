@@ -37,6 +37,7 @@ class hr_company(models.Model):
     phone = fields.Char(string="Phone Number", help="This employee phone number fields.")
     state = fields.Selection([("draft","Draft"),("in_process","In Process"),("done","Done"),("cancel","Cancel")],default="draft",string="Status")
     company_seq = fields.Char(string='Order Reference', required=True, copy=False, readonly=True, index=True, default=lambda self: _('New'))
+    usre_ids = fields.Many2one('res.users', string="Company Manager")
     
     
     # eventcompute = fields.Integer(string="Event", compute="compute_event") # Add Compute Field.

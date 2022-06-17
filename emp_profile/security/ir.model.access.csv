@@ -1,3 +1,6 @@
 id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
-access_emp_profile_emp_profile,emp_profile.emp_profile,model_emp_profile_emp_profile,base.group_user,1,1,1,1
+access_emp_profile_emp_profile,emp_profile_emp_profile,model_emp_profile_emp_profile,base.group_user,0,0,0,0
+access_emp_profile_record_employees_name,emp_profile_record_employees_name,model_emp_profile_emp_profile,emp_profile.profile_record_employees_name,1,0,0,0
+access_emp_profile_records_hr_name,emp_profile_records_hr_name,model_emp_profile_emp_profile,emp_profile.profile_records_hr_name,1,1,1,0
+access_emp_profile_records_admin_name,emp_profile_records_admin_name,model_emp_profile_emp_profile,emp_profile.profile_records_admin_name,1,1,1,1
 access_wizard_company,wizard_company,model_wizard_company,base.group_user,1,1,1,1
