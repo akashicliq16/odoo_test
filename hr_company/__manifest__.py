@@ -25,6 +25,7 @@
     # always loaded
     'data': [
         'data/company_demo_data.xml',
+# <<<<<<< Security_odoo
         'data/department_type_demo_data.xml',
         'security/ir.model.access.csv',
         'security/company_security.xml',

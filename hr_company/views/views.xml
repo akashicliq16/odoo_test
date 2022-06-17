@@ -65,6 +65,7 @@
                 <field name="company_seq" readonly="1" />
               </h1>
             </div>
+            
             <group>
               <group>
                 <field name="name" placeholder="Company Name" /> 
@@ -72,6 +73,7 @@
                 <field name="phone" placeholder="Employee Phone Number" />
                 <field name="currency_id" placeholder="Currency" />
                 <field name="usre_ids" />
+
                 <!-- <field name="eventcompute" placeholder="Event Total" /> Add Compute Field --> 
               </group>
               <group string="Company Address">

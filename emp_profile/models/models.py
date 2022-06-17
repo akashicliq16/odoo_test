@@ -1,7 +1,6 @@
 # -*- coding: utf-8 -*-
 # import string
-import email
-import string
+
 from unittest import result
 
 from paramiko import SecurityOptions
@@ -159,5 +158,6 @@ class emp_profile(models.Model):
                 em.age = total_age
             else:
                 em.age = "Not Provide......"
+
 
 

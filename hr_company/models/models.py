@@ -39,7 +39,6 @@ class hr_company(models.Model):
     company_seq = fields.Char(string='Order Reference', required=True, copy=False, readonly=True, index=True, default=lambda self: _('New'))
     usre_ids = fields.Many2one('res.users', string="Company Manager")
     
-    
     # eventcompute = fields.Integer(string="Event", compute="compute_event") # Add Compute Field.
 
     # Add Compute Field.
@@ -112,7 +111,7 @@ class Department(models.Model):
 
     sequence = fields.Integer('sequence')
     name=fields.Char("Department")
-   
+ 
 
 class ResPartner(models.Model):
     _inherit = 'res.partner'

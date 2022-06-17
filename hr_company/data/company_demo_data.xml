@@ -97,5 +97,7 @@
         <field name="prefix">Com0/00 </field>
         <field name="number_increment" eval="1"/>
     </record>
-
+  
+   
+    
 </odoo>
